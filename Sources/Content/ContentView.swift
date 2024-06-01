@@ -69,7 +69,7 @@ struct ContentView: View {
     Toggle("Allow transitions", isOn: $transition)
 
     Divider()
-    Button("Location …") {
+    Button("Location…") {
      openLocationPanel()
     }
    }
