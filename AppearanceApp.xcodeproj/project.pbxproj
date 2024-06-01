@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D06AE3E2C0609C5006DB1FF /* AppearanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D06AE3D2C0609C5006DB1FF /* AppearanceApp.swift */; };
+		3D06AE402C0609C5006DB1FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D06AE3F2C0609C5006DB1FF /* ContentView.swift */; };
+		3D06AE422C0609C8006DB1FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D06AE412C0609C8006DB1FF /* Assets.xcassets */; };
+		3D06AE4F2C060A8E006DB1FF /* Appearance in Frameworks */ = {isa = PBXBuildFile; productRef = 3D06AE4E2C060A8E006DB1FF /* Appearance */; };
+		3D06AE542C060FF8006DB1FF /* Persistence in Frameworks */ = {isa = PBXBuildFile; productRef = 3D06AE532C060FF8006DB1FF /* Persistence */; };
+		3D53AC1D2C0BA96F005E85A9 /* Appearance in Frameworks */ = {isa = PBXBuildFile; productRef = 3D53AC1C2C0BA96F005E85A9 /* Appearance */; };
+		3D53AC202C0BA995005E85A9 /* Location in Frameworks */ = {isa = PBXBuildFile; productRef = 3D53AC1F2C0BA995005E85A9 /* Location */; };
+		3D53AC232C0BA9BA005E85A9 /* Solar in Frameworks */ = {isa = PBXBuildFile; productRef = 3D53AC222C0BA9BA005E85A9 /* Solar */; };
+		3D812E772C0A7AB4000BB0ED /* Appearance in Frameworks */ = {isa = PBXBuildFile; productRef = 3D812E762C0A7AB4000BB0ED /* Appearance */; };
+		3D812E7A2C0A7ACD000BB0ED /* Location in Frameworks */ = {isa = PBXBuildFile; productRef = 3D812E792C0A7ACD000BB0ED /* Location */; };
+		3D812E7D2C0A7AE2000BB0ED /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 3D812E7C2C0A7AE2000BB0ED /* Time */; };
+		3D812E802C0A7AFE000BB0ED /* Solar in Frameworks */ = {isa = PBXBuildFile; productRef = 3D812E7F2C0A7AFE000BB0ED /* Solar */; };
+		3D812E842C0A7D82000BB0ED /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D812E832C0A7D82000BB0ED /* Mode.swift */; };
+		3D812E862C0A7DD0000BB0ED /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D812E852C0A7DD0000BB0ED /* Location.swift */; };
+		3D812E8C2C0A7F41000BB0ED /* AutoAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D812E8B2C0A7F41000BB0ED /* AutoAppearance.swift */; };
+		3D812E902C0A8284000BB0ED /* Solar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D812E8F2C0A8284000BB0ED /* Solar.swift */; };
+		3D812E932C0A9628000BB0ED /* Acrylic in Frameworks */ = {isa = PBXBuildFile; productRef = 3D812E922C0A9628000BB0ED /* Acrylic */; };
+		3D812E972C0AAD5A000BB0ED /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D812E962C0AAD5A000BB0ED /* SkyLight.framework */; };
+		3D8BF0412C0909E10079BAAE /* Configuration in Frameworks */ = {isa = PBXBuildFile; productRef = 3D8BF0402C0909E10079BAAE /* Configuration */; };
+		3D8BF0442C090A810079BAAE /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 3D8BF0432C090A810079BAAE /* Core */; };
+		3D8BF0462C090A810079BAAE /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 3D8BF0452C090A810079BAAE /* Extensions */; };
+		3DF78D9A2C0ABEE000C5BDB2 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF78D992C0ABEE000C5BDB2 /* LocationView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3D06AE3A2C0609C5006DB1FF /* AppearanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppearanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D06AE3D2C0609C5006DB1FF /* AppearanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceApp.swift; sourceTree = "<group>"; };
+		3D06AE3F2C0609C5006DB1FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3D06AE412C0609C8006DB1FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D812E832C0A7D82000BB0ED /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		3D812E852C0A7DD0000BB0ED /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		3D812E8B2C0A7F41000BB0ED /* AutoAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoAppearance.swift; sourceTree = "<group>"; };
+		3D812E8F2C0A8284000BB0ED /* Solar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solar.swift; sourceTree = "<group>"; };
+		3D812E942C0A9682000BB0ED /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		3D812E962C0AAD5A000BB0ED /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = ../../../../System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = "<group>"; };
+		3D8BF03C2C08FB5A0079BAAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DA7A9632C0B07CB00658B68 /* Appearance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Appearance.entitlements; sourceTree = "<group>"; };
+		3DF78D992C0ABEE000C5BDB2 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D06AE372C0609C5006DB1FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D53AC232C0BA9BA005E85A9 /* Solar in Frameworks */,
+				3D8BF0462C090A810079BAAE /* Extensions in Frameworks */,
+				3D812E7A2C0A7ACD000BB0ED /* Location in Frameworks */,
+				3D06AE542C060FF8006DB1FF /* Persistence in Frameworks */,
+				3D812E772C0A7AB4000BB0ED /* Appearance in Frameworks */,
+				3D812E932C0A9628000BB0ED /* Acrylic in Frameworks */,
+				3D812E972C0AAD5A000BB0ED /* SkyLight.framework in Frameworks */,
+				3D8BF0412C0909E10079BAAE /* Configuration in Frameworks */,
+				3D53AC202C0BA995005E85A9 /* Location in Frameworks */,
+				3D8BF0442C090A810079BAAE /* Core in Frameworks */,
+				3D06AE4F2C060A8E006DB1FF /* Appearance in Frameworks */,
+				3D812E802C0A7AFE000BB0ED /* Solar in Frameworks */,
+				3D53AC1D2C0BA96F005E85A9 /* Appearance in Frameworks */,
+				3D812E7D2C0A7AE2000BB0ED /* Time in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D06AE312C0609C5006DB1FF = {
+			isa = PBXGroup;
+			children = (
+				3D06AE3C2C0609C5006DB1FF /* Sources */,
+				3D812E952C0AAD49000BB0ED /* Frameworks */,
+				3D06AE3B2C0609C5006DB1FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D06AE3B2C0609C5006DB1FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D06AE3A2C0609C5006DB1FF /* AppearanceApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D06AE3C2C0609C5006DB1FF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3D06AE3D2C0609C5006DB1FF /* AppearanceApp.swift */,
+				3D812E8B2C0A7F41000BB0ED /* AutoAppearance.swift */,
+				3DAE10992C0B813A007F6BA0 /* Extensions */,
+				3D812E872C0A7DE9000BB0ED /* Content */,
+				3D812E8D2C0A7F53000BB0ED /* Resources */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3D812E872C0A7DE9000BB0ED /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				3D06AE3F2C0609C5006DB1FF /* ContentView.swift */,
+				3DF78D992C0ABEE000C5BDB2 /* LocationView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		3D812E8D2C0A7F53000BB0ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D8BF03C2C08FB5A0079BAAE /* Info.plist */,
+				3D06AE412C0609C8006DB1FF /* Assets.xcassets */,
+				3DA7A9632C0B07CB00658B68 /* Appearance.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3D812E952C0AAD49000BB0ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D812E962C0AAD5A000BB0ED /* SkyLight.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DAE10992C0B813A007F6BA0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D812E942C0A9682000BB0ED /* BridgingHeader.h */,
+				3D812E852C0A7DD0000BB0ED /* Location.swift */,
+				3D812E8F2C0A8284000BB0ED /* Solar.swift */,
+				3D812E832C0A7D82000BB0ED /* Mode.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D06AE392C0609C5006DB1FF /* Appearance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D06AE492C0609C8006DB1FF /* Build configuration list for PBXNativeTarget "Appearance" */;
+			buildPhases = (
+				3D06AE362C0609C5006DB1FF /* Sources */,
+				3D06AE372C0609C5006DB1FF /* Frameworks */,
+				3D06AE382C0609C5006DB1FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Appearance;
+			packageProductDependencies = (
+				3D06AE4E2C060A8E006DB1FF /* Appearance */,
+				3D06AE532C060FF8006DB1FF /* Persistence */,
+				3D8BF0402C0909E10079BAAE /* Configuration */,
+				3D8BF0432C090A810079BAAE /* Core */,
+				3D8BF0452C090A810079BAAE /* Extensions */,
+				3D812E762C0A7AB4000BB0ED /* Appearance */,
+				3D812E792C0A7ACD000BB0ED /* Location */,
+				3D812E7C2C0A7AE2000BB0ED /* Time */,
+				3D812E7F2C0A7AFE000BB0ED /* Solar */,
+				3D812E922C0A9628000BB0ED /* Acrylic */,
+				3D53AC1C2C0BA96F005E85A9 /* Appearance */,
+				3D53AC1F2C0BA995005E85A9 /* Location */,
+				3D53AC222C0BA9BA005E85A9 /* Solar */,
+			);
+			productName = AutoDark;
+			productReference = 3D06AE3A2C0609C5006DB1FF /* AppearanceApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D06AE322C0609C5006DB1FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					3D06AE392C0609C5006DB1FF = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 3D06AE352C0609C5006DB1FF /* Build configuration list for PBXProject "AppearanceApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D06AE312C0609C5006DB1FF;
+			packageReferences = (
+				3D06AE522C060FF8006DB1FF /* XCRemoteSwiftPackageReference "persistence" */,
+				3D8BF03F2C0909E10079BAAE /* XCRemoteSwiftPackageReference "configuration" */,
+				3D53AC1A2C0BA932005E85A9 /* XCRemoteSwiftPackageReference "acrylic" */,
+				3D53AC1B2C0BA96F005E85A9 /* XCRemoteSwiftPackageReference "appearance" */,
+				3D53AC1E2C0BA995005E85A9 /* XCRemoteSwiftPackageReference "location" */,
+				3D53AC212C0BA9BA005E85A9 /* XCRemoteSwiftPackageReference "solar" */,
+			);
+			productRefGroup = 3D06AE3B2C0609C5006DB1FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D06AE392C0609C5006DB1FF /* Appearance */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D06AE382C0609C5006DB1FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D06AE422C0609C8006DB1FF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D06AE362C0609C5006DB1FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D06AE402C0609C5006DB1FF /* ContentView.swift in Sources */,
+				3DF78D9A2C0ABEE000C5BDB2 /* LocationView.swift in Sources */,
+				3D812E8C2C0A7F41000BB0ED /* AutoAppearance.swift in Sources */,
+				3D812E842C0A7D82000BB0ED /* Mode.swift in Sources */,
+				3D812E862C0A7DD0000BB0ED /* Location.swift in Sources */,
+				3D812E902C0A8284000BB0ED /* Solar.swift in Sources */,
+				3D06AE3E2C0609C5006DB1FF /* AppearanceApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3D06AE472C0609C8006DB1FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D06AE482C0609C8006DB1FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		3D06AE4A2C0609C8006DB1FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/Resources/Appearance.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sources/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Appearance;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "$(TARGET_NAME) must have access to system events in order to change system appearance.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow $(TARGET_NAME) to access your location, in order to determine sunset and sunrise times and lookup at any time in order to update.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Allow $(TARGET_NAME) to access your location, in order to determine sunset and sunrise times.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow $(TARGET_NAME) to access your location, in order to determine sunset and sunrise times.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = acrylic.appearance;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)App";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_DISABLE_SAFETY_CHECKS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/Extensions/BridgingHeader.h;
+				SWIFT_PACKAGE_NAME = "";
+				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
+			};
+			name = Debug;
+		};
+		3D06AE4B2C0609C8006DB1FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/Resources/Appearance.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_OPTIMIZATION_LEVEL = fast;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sources/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Appearance;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "$(TARGET_NAME) must have access to system events in order to change system appearance.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow $(TARGET_NAME) to access your location, in order to determine sunset and sunrise times and lookup at any time in order to update.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Allow $(TARGET_NAME) to access your location, in order to determine sunset and sunrise times.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow $(TARGET_NAME) to access your location, in order to determine sunset and sunrise times.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = acrylic.appearance;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)App";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_DISABLE_SAFETY_CHECKS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/Extensions/BridgingHeader.h;
+				SWIFT_PACKAGE_NAME = "";
+				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D06AE352C0609C5006DB1FF /* Build configuration list for PBXProject "AppearanceApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D06AE472C0609C8006DB1FF /* Debug */,
+				3D06AE482C0609C8006DB1FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D06AE492C0609C8006DB1FF /* Build configuration list for PBXNativeTarget "Appearance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D06AE4A2C0609C8006DB1FF /* Debug */,
+				3D06AE4B2C0609C8006DB1FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D06AE522C060FF8006DB1FF /* XCRemoteSwiftPackageReference "persistence" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/acrlc/persistence";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		3D53AC1A2C0BA932005E85A9 /* XCRemoteSwiftPackageReference "acrylic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/acrlc/acrylic";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		3D53AC1B2C0BA96F005E85A9 /* XCRemoteSwiftPackageReference "appearance" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/acrlc/appearance";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		3D53AC1E2C0BA995005E85A9 /* XCRemoteSwiftPackageReference "location" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/acrlc/location";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		3D53AC212C0BA9BA005E85A9 /* XCRemoteSwiftPackageReference "solar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/acrlc/solar";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		3D8BF03F2C0909E10079BAAE /* XCRemoteSwiftPackageReference "configuration" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/acrlc/configuration";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D06AE4E2C060A8E006DB1FF /* Appearance */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Appearance;
+		};
+		3D06AE532C060FF8006DB1FF /* Persistence */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D06AE522C060FF8006DB1FF /* XCRemoteSwiftPackageReference "persistence" */;
+			productName = Persistence;
+		};
+		3D53AC1C2C0BA96F005E85A9 /* Appearance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D53AC1B2C0BA96F005E85A9 /* XCRemoteSwiftPackageReference "appearance" */;
+			productName = Appearance;
+		};
+		3D53AC1F2C0BA995005E85A9 /* Location */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D53AC1E2C0BA995005E85A9 /* XCRemoteSwiftPackageReference "location" */;
+			productName = Location;
+		};
+		3D53AC222C0BA9BA005E85A9 /* Solar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D53AC212C0BA9BA005E85A9 /* XCRemoteSwiftPackageReference "solar" */;
+			productName = Solar;
+		};
+		3D812E762C0A7AB4000BB0ED /* Appearance */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Appearance;
+		};
+		3D812E792C0A7ACD000BB0ED /* Location */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Location;
+		};
+		3D812E7C2C0A7AE2000BB0ED /* Time */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Time;
+		};
+		3D812E7F2C0A7AFE000BB0ED /* Solar */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Solar;
+		};
+		3D812E922C0A9628000BB0ED /* Acrylic */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Acrylic;
+		};
+		3D8BF0402C0909E10079BAAE /* Configuration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D8BF03F2C0909E10079BAAE /* XCRemoteSwiftPackageReference "configuration" */;
+			productName = Configuration;
+		};
+		3D8BF0432C090A810079BAAE /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		3D8BF0452C090A810079BAAE /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3D06AE322C0609C5006DB1FF /* Project object */;
+}
