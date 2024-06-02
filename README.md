@@ -11,7 +11,7 @@ A menu bar app that controls the appearance of a system (macOS)
 > [!TIP]
 > Location can be set manually in `Settings` menu.
 
-- Uses system events to change to ‘tell’ system appearance to change themes or can smoothly transition with permission to record the screen.
+- Uses system events to ‘tell’ system appearance to change themes or can smoothly transition with permission to record the screen.
 > [!NOTE]
 > System appearance apparently has privileges to record the screen (without an indicator) by default. But this appears to be necessary in order to create the transition effect.
 
