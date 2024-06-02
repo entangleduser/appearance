@@ -42,8 +42,6 @@ struct AutoAppearance: ContextModule {
    ) { @MainActor solar in
     /// update after making predictions available
     await contextWillChange.send()
-    self.location = solar.location
-    assert(DefaultContext(.location).wrappedValue == solar.location)
    }
   }
  }
