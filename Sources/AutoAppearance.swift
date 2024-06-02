@@ -5,7 +5,6 @@ import ServiceManagement
 
 /// A module that controls the appearance of the system.
 struct AutoAppearance: ContextModule {
- static var shared = AutoAppearance()
  let configuration: Configuration = .default
 
  @DefaultContext(.mode)
