@@ -39,7 +39,7 @@ extension Mode {
   var intensity: Double?
   let transition: Bool
 
-  var perform: ((Solar.Module<Self.ID>) async throws -> ())?
+  var perform: ((Solar.Projector<Self.ID>) async throws -> ())?
 
   init(
    location: Context<Location>? = nil,
@@ -49,7 +49,7 @@ extension Mode {
    interval: Context<TimeInterval?>? = nil,
    intensity: Context<Double?>? = nil,
    transition: Bool,
-   perform: ((Solar.Module<Self.ID>) async throws -> ())? = nil
+   perform: ((Solar.Projector<Self.ID>) async throws -> ())? = nil
   ) {
    if let location {
     _location = location
@@ -107,7 +107,7 @@ extension Mode {
     )
    }
 
-   Solar.Module<Self.ID>(
+   Solar.Projector<Self.ID>(
     id: id,
     location: $location,
     predictions: $predictions,

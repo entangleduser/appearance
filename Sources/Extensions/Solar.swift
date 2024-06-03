@@ -3,8 +3,11 @@ import Foundation
 import Time
 
 extension Solar {
+ /// A module that makes projections about the current solar cycle at a
+ /// consistent rate or set interval if needed.
+ /// - Note: This is intended be exported to a library in the future.
  @dynamicMemberLookup
- struct Module<ID: Hashable>: Acrylic.Module {
+ struct Projector<ID: Hashable>: Acrylic.Module {
   subscript<A>(
    dynamicMember keyPath: KeyPath<PhasePredictions, A>
   ) -> A { predictions[keyPath: keyPath] }
