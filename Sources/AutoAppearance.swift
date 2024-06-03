@@ -27,8 +27,16 @@ struct AutoAppearance: ContextModule {
  var predictions: Solar.PhasePredictions!
  @Context
  var authorizationLevel: Location.AuthorizationLevel = .authorizedAlways
- @StandardDefault(.transition)
- var transition
+ @StandardDefaultContext(.transition)
+ var transition {
+  willSet {
+   Task { @MainActor in await contextWillChange.send() }
+  }
+  didSet {
+   guard oldValue != transition, transition else { return }
+   Mode.checkScreenCaptureStatus()
+  }
+ }
 
  var void: some Module {
   switch mode {

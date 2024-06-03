@@ -1,11 +1,8 @@
-import Persistence
 import SwiftUI
 
 struct ContentView: View {
  @ObservedObject
  private var launchStatus = AppearanceApp.launchStatusObserver
- @Standard(.transition)
- private var transition
  @ContextAlias(AutoAppearance.self)
  private var module
 
@@ -66,8 +63,8 @@ struct ContentView: View {
    Divider()
    Menu("Settings") {
     Toggle("Launch at login", isOn: $launchStatus.isEnabled)
-    Toggle("Allow transitions", isOn: $transition)
-
+    Toggle("Allow transitions", isOn: $module.transition)
+    
     Divider()
     Button("Location…") {
      openLocationPanel()
@@ -82,12 +79,5 @@ struct ContentView: View {
    .font(.system(size: 11.5))
   }
   .font(.system(size: 13))
-  .onChange(of: transition) {
-   oldValue,
-   newValue in
-   if oldValue != newValue, newValue {
-    Mode.checkScreenCaptureStatus()
-   }
-  }
  }
 }
