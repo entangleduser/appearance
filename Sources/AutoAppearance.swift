@@ -92,7 +92,7 @@ extension AppearanceApp {
  }
 }
 
-// MARK: - Default Keys
+// MARK: - Defaults
 struct TransitionKey: StandardUserDefaultsKey {
  static let defaultValue = false
 }
