@@ -22,8 +22,6 @@ extension Mode {
 
  /// A module that toggles the system appearance at regular intervals.
  struct Auto: Module {
-  let id = "Mode.auto"
-
   @Context
   var location: Location = .unknown
   @Context
