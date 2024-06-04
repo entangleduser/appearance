@@ -23,11 +23,11 @@ struct ContentView: View {
     let sunsetSection = Section {
      #if DEBUG
      Text(
-      "\(predictions.sunset!.formatted(date: .omitted, time: .standard))"
+      "\(predictions.sunset.formatted(date: .omitted, time: .standard))"
      )
      #else
      Text(
-      "\(predictions.sunset!.formatted(date: .omitted, time: .shortened))"
+      "\(predictions.sunset.formatted(date: .omitted, time: .shortened))"
      )
      #endif
     } header: {
@@ -36,11 +36,11 @@ struct ContentView: View {
     let sunriseSection = Section {
      #if DEBUG
      Text(
-      "\(predictions.sunrise!.formatted(date: .omitted, time: .standard))"
+      "\(predictions.sunrise.formatted(date: .omitted, time: .standard))"
      )
      #else
      Text(
-      "\(predictions.sunrise!.formatted(date: .omitted, time: .shortened))"
+      "\(predictions.sunrise.formatted(date: .omitted, time: .shortened))"
      )
      #endif
     } header: {

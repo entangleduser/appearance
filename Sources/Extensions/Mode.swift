@@ -25,7 +25,7 @@ extension Mode {
   @Context
   var location: Location = .unknown
   @Context
-  var predictions: Solar.PhasePredictions!
+  var predictions: Solar.PhasePredictions?
 
   var authorizationLevel: Location.AuthorizationLevel = .authorizedAlways
 

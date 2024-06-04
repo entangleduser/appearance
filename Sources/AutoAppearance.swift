@@ -24,7 +24,7 @@ struct AutoAppearance: ContextModule {
  @DefaultContext(.location)
  var location: Location
  @Context
- var predictions: Solar.PhasePredictions!
+ var predictions: Solar.PhasePredictions?
  @Context
  var authorizationLevel: Location.AuthorizationLevel = .authorizedAlways
  @StandardDefaultContext(.transition)

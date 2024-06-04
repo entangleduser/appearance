@@ -10,7 +10,7 @@ extension Solar {
  struct Projector<ID: Hashable>: Acrylic.Module {
   subscript<A>(
    dynamicMember keyPath: KeyPath<PhasePredictions, A>
-  ) -> A { predictions[keyPath: keyPath] }
+  ) -> A { predictions![keyPath: keyPath] }
 
   var id: ID?
 
@@ -27,7 +27,7 @@ extension Solar {
   @Context
   var intensity: Double?
   @Context
-  var predictions: PhasePredictions!
+  var predictions: PhasePredictions?
 
   var errorHandler: ((SolarProjectorError) -> ())?
   let perform: (Self) async throws -> ()
@@ -99,11 +99,12 @@ extension Solar {
   var void: some Acrylic.Module {
    // start the repeat cycle at normal or custom intervals
    Repeat.Async {
-    let predictions = location.solarPhases
-    if
-     let sunrise = predictions.sunrise,
-     let sunset = predictions.sunset {
-     let now = Date.now
+    let now = Date.now
+    self.predictions =
+     Solar.PhasePredictions(for: now, x: location.x, y: location.y)
+
+    if let predictions {
+     let (sunrise, sunset) = (predictions.sunrise, predictions.sunset)
 
      let update = {
       if let rate {
@@ -120,13 +121,23 @@ extension Solar {
       if self.intensity != intensity { await $intensity.state(intensity) }
      }
 
-     self.predictions = predictions
      let date = update()
+
+     #if DEBUG
+     print("it is", predictions.isDaytime ? "daytime" : "nightime")
+     print("\(sunrise.formatted()) < sunrise/sunset > \(sunset.formatted())")
+     print(
+      """
+      updating in \
+      \(Duration.seconds(date.timeIntervalSince(now)).timerView)
+      """
+     )
+     #endif
 
      /// handle error or continue with normal update
      if let errorHandler {
       do {
-       try checkUpdateWithError(date)
+       try checkUpdateWithError(date, since: now)
        try await perform(self)
       } catch let error as SolarProjectorError {
        errorHandler(error)
@@ -134,24 +145,25 @@ extension Solar {
        throw error
       }
      } else {
-      checkUpdateWithFatalError(date)
+      checkUpdateWithFatalError(date, since: now)
       try await perform(self)
      }
 
-     #if DEBUG
-     print("\(sunrise.formatted()) < sunrise/sunset > \(sunset.formatted())")
-     print(
-      """
-      updating in \
-      \(Duration.seconds(date.timeIntervalSinceNow).timerView)
-      """
-     )
+     try await clock.sleep(until: date)
 
-     try await clock.sleep(until: date)
-     #else
-     try await clock.sleep(until: date)
-     #endif
      return true
+    } else if let errorHandler {
+     errorHandler(.unableToPredict(location))
+    } else {
+     #if DEBUG
+     let error = SolarProjectorError.unableToPredict(location)
+     print(error.description)
+     throw error
+     #else
+     fatalError(
+      SolarProjectorError.unableToPredict(location).description
+     )
+     #endif
     }
     // set intensity to the undetermined state
     await $intensity.state(.none)
@@ -163,13 +175,13 @@ extension Solar {
 
 // MARK: - Error Handling
 enum SolarProjectorError: LocalizedError, CustomStringConvertible {
- init?(_ date: Date) {
-  let interval = date.timeIntervalSinceNow
+ init?(_ date: Date, since reference: Date) {
+  let interval = date.timeIntervalSince(reference)
   if interval < .leastNonzeroMagnitude {
    // invalidate if longer than 24 hours which is up from midnight or noon
    // at the least
    self = .invalidDate(date, true)
-  } else if interval > 86_400 {
+  } else if interval > 86400 {
    // invalidate if longer than 24 hours which is up from midnight or noon
    // at the least
    self = .invalidDate(date, false)
@@ -177,32 +189,35 @@ enum SolarProjectorError: LocalizedError, CustomStringConvertible {
    return nil
   }
  }
- 
- case invalidDate(Date, Bool)
+
+ case invalidDate(Date, Bool), unableToPredict(Location)
  var localizedDescription: String? { description }
  var description: String {
-  if case .invalidDate(let date, let soon) = self {
-    """
-    Update at \(date.formatted()) occurs to \(soon ? "soon" : "late"), maybe \
-    the hours cycle of your system's clock is not being accounted for.
-    """
-  } else {
-   fatalError()
+  switch self {
+  case .invalidDate(let date, let soon):
+   """
+   Update at \(date.formatted()) occurs too \(soon ? "soon" : "late"), maybe \
+   the hours cycle of your system's clock is not being accounted for.
+   """
+  case .unableToPredict(let location):
+   "Unable to prediction current phase with location: \(location)"
   }
  }
 }
 
 extension Solar.Projector {
  /// Checks the update intervale or terminates the program
- func checkUpdateWithFatalError(_ date: Date) {
-  if let error = SolarProjectorError(date) {
+ @_transparent
+ func checkUpdateWithFatalError(_ date: Date, since reference: Date) {
+  if let error = SolarProjectorError(date, since: reference) {
    fatalError(error.description)
   }
  }
 
  /// Checks the update intervale or throws an error
- func checkUpdateWithError(_ date: Date) throws {
-  if let error = SolarProjectorError(date) {
+ @_transparent
+ func checkUpdateWithError(_ date: Date, since reference: Date) throws {
+  if let error = SolarProjectorError(date, since: reference) {
    throw error
   }
  }
@@ -261,17 +276,5 @@ private extension Date {
 
  func update(from sunset: Date, to sunrise: Date) -> Self {
   advanced(by: (self > sunrise ? sunset : sunrise).timeIntervalSince(self))
- }
-}
-
-extension Solar.PhasePredictions {
- init(for date: Date = Date(), location: Location) {
-  self.init(for: date, x: location.x, y: location.y)
- }
-}
-
-extension Location {
- var solarPhases: Solar.PhasePredictions {
-  Solar.PhasePredictions(location: self)
  }
 }
