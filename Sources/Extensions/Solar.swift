@@ -118,7 +118,7 @@ extension Solar {
 
      if self.intensity != nil {
       let intensity = now.intensity(from: sunrise, to: sunset, with: elipson)
-      if self.intensity != intensity { await $intensity.state(intensity) }
+      if self.intensity != intensity { await $intensity.updateState() }
      }
 
      let date = update()
@@ -166,7 +166,7 @@ extension Solar {
      #endif
     }
     // set intensity to the undetermined state
-    await $intensity.state(.none)
+    await $intensity.updateState(.none)
     return false
    }
   }
