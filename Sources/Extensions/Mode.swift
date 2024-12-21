@@ -118,14 +118,10 @@ extension Mode {
      let current: Mode = .systemTheme
      try await perform?(solar)
      guard mode != current else {
-      #if DEBUG
-      print("current mode (\(mode)) already set")
-      #endif
+      AutoAppearance.log("current mode (\(mode)) already set")
       return
      }
-     #if DEBUG
-     print("switching to \(mode) mode")
-     #endif
+     AutoAppearance.log("switching to \(mode) mode")
      try await Mode.set(
       to: mode, transition: transition
      )
@@ -136,7 +132,7 @@ extension Mode {
 }
 
 extension Mode {
- @MainActor(unsafe)
+ @MainActor
  static func set(to mode: Self, transition: Bool) async throws {
   if transition, await canCaptureScreen {
    setSystem(to: mode)

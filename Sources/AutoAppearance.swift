@@ -5,8 +5,9 @@ import ServiceManagement
 
 /// A module that controls the appearance of the system.
 struct AutoAppearance: ContextModule {
+ static let log = Configuration.log()
  let configuration: Configuration = .default
-
+ 
  @DefaultContext(.mode)
  var mode: Mode {
   willSet {
@@ -60,7 +61,7 @@ struct AutoAppearance: ContextModule {
 extension AppearanceApp {
  static let launchStatusObserver = LaunchStatusObserver()
  static let launchStatusLog = Configuration.log(
-  category: "loginStatus", level: .error
+  category: "launch status", level: .error
  )
 
  static var shouldLaunchAutomatically: Bool {
@@ -117,8 +118,8 @@ extension UserDefaultsKey where Self == ModeKey {
  static var mode: Self { Self() }
 }
 
-extension Location: JSONCodable {}
-extension Location: Infallible {
+extension Location: @retroactive JSONCodable {}
+extension Location: @retroactive Infallible {
  public static let defaultValue = unknown
 }
 
@@ -129,3 +130,4 @@ struct LocationKey: InfallibleCodableDefaultsKey {
 extension UserDefaultsKey where Self == LocationKey {
  static var location: Self { Self() }
 }
+
