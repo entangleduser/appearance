@@ -3,8 +3,8 @@ import SwiftUI
 struct ContentView: View {
  @ObservedObject
  private var launchStatus = AppearanceApp.launchStatusObserver
- @ContextAlias(AutoAppearance.self)
- private var module
+ @ContextAlias()
+ private var module: AutoAppearance
 
  var body: some View {
   Group {

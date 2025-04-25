@@ -7,7 +7,8 @@ import ServiceManagement
 struct AutoAppearance: ContextModule {
  static let log = Configuration.log()
  let configuration: Configuration = .default
- 
+ let storage = UserDefaults.custom
+
  @DefaultContext(.mode)
  var mode: Mode {
   willSet {
@@ -29,29 +30,40 @@ struct AutoAppearance: ContextModule {
  @Context
  var authorizationLevel: Location.AuthorizationLevel = .authorizedAlways
  @StandardDefaultContext(.transition)
- var transition {
+ var transition: Bool {
   willSet {
    Task { @MainActor in await contextWillChange.send() }
   }
   didSet {
    guard oldValue != transition, transition else { return }
+
    Mode.checkScreenCaptureStatus()
   }
  }
 
  var void: some Module {
+  if transition {
+   Perform.Async(action: Mode.checkScreenCaptureStatus)
+  }
   switch mode {
-  case .dark, .light:
-   Mode.Set(to: mode, transition: transition)
-  default:
+  case .auto:
    Mode.Auto(
     location: $location, predictions: $predictions,
     authorizationLevel: authorizationLevel,
     transition: transition
-   ) { @MainActor solar in
-    /// update after making predictions available
+   ) { @MainActor _, newMode in
+    // set wallpaper with every cycle
+    // self.setWallpaper(newMode)
+    // update after making predictions available
     await contextWillChange.send()
    }
+  default:
+   if mode != .systemTheme {
+    Mode.Set(to: mode, transition: transition)
+   }
+//   Perform {
+//    setWallpaper(mode)
+//   }
   }
  }
 }

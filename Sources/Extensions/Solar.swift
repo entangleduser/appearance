@@ -148,7 +148,7 @@ extension Solar {
       try await perform(self)
      }
 
-     try await clock.sleep(until: deadline)
+     try await clock.sleep(until: deadline, tolerance: elipson)
      return true
     } else if let errorHandler {
      errorHandler(.unableToPredict(location))

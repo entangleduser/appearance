@@ -3,8 +3,8 @@ import SwiftUI
 
 @main
 struct AppearanceApp: App {
- @ContextAlias(AutoAppearance.self, true)
- var module
+ @ContextAlias()
+ var module: AutoAppearance
 
  var body: some Scene {
   MenuBarExtra(
@@ -34,7 +34,6 @@ struct AppearanceApp: App {
    alert.runModal()
    exit(1)
   }
-  
-  if module.transition { Mode.checkScreenCaptureStatus() }
+  module.callContext()
  }
 }

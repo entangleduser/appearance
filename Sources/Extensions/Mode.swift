@@ -37,7 +37,7 @@ extension Mode {
   var intensity: Double?
   let transition: Bool
 
-  var perform: ((Solar.Projector<Self.ID>) async throws -> ())?
+  var perform: ((Mode, Mode) async throws -> Void)?
 
   init(
    location: Context<Location>? = nil,
@@ -47,7 +47,7 @@ extension Mode {
    interval: Context<TimeInterval?>? = nil,
    intensity: Context<Double?>? = nil,
    transition: Bool,
-   perform: ((Solar.Projector<Self.ID>) async throws -> ())? = nil
+   perform: ((Mode, Mode) async throws -> Void)? = nil
   ) {
    if let location {
     _location = location
@@ -83,7 +83,7 @@ extension Mode {
    interval: Context<TimeInterval?>? = nil,
    intensity: Context<Double?>? = nil,
    transition: Bool,
-   perform: @escaping () async throws -> ()
+   perform: @escaping () async throws -> Void
   ) {
    self.init(
     location: location,
@@ -92,11 +92,11 @@ extension Mode {
     rate: rate,
     interval: interval,
     intensity: intensity, transition: transition,
-    perform: { _ in try await perform() }
+    perform: { _, _ in try await perform() }
    )
   }
 
-   var void: some Module {
+  var void: some Module {
    if location.isInvalid {
     Locator(
      $location,
@@ -116,15 +116,13 @@ extension Mode {
      @MainActor solar in
      let mode: Mode = solar.isDaytime ? .light : .dark
      let current: Mode = .systemTheme
-     try await perform?(solar)
-     guard mode != current else {
-      AutoAppearance.log("current mode (\(mode)) already set")
-      return
-     }
      AutoAppearance.log("switching to \(mode) mode")
-     try await Mode.set(
-      to: mode, transition: transition
-     )
+     if mode != current {
+      try await Mode.set(to: mode, transition: transition)
+     } else {
+      AutoAppearance.log("current mode (\(mode)) already set")
+     }
+     try await perform?(current, mode)
     }
    )
   }
@@ -134,6 +132,7 @@ extension Mode {
 extension Mode {
  @MainActor
  static func set(to mode: Self, transition: Bool) async throws {
+  precondition(mode != systemTheme)
   if transition, await canCaptureScreen {
    setSystem(to: mode)
   } else {
@@ -173,9 +172,9 @@ extension Mode {
   SLSGetAppearanceThemeLegacy() ? .dark : .light
  }
 
- static func checkScreenCaptureStatus() {
+ @Sendable static func checkScreenCaptureStatus() {
   Task { _ = await canCaptureScreen }
- }
+ } 
 
  /// Requests screen permission to gradually transition appearance.
  static var canCaptureScreen: Bool {
